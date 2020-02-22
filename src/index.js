@@ -42,9 +42,9 @@ const evenGame = () => {
   const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const randomNumber = generateRandomNumber();
+  const question = `Question: ${randomNumber}`;
   const isEven = (randomNumber % 2 === 0);
   const correctAnswer = isEven ? 'yes' : 'no';
-  const question = `Question: ${randomNumber}`;
   return [task, question, String(correctAnswer)];
 };
 
@@ -53,6 +53,7 @@ const calcGame = () => {
   const randomNumber1 = generateRandomNumber();
   const randomNumber2 = generateRandomNumber();
   const operand = generateRandomMathSign();
+  const question = `Question: ${randomNumber1} ${operand} ${randomNumber2}`;
   let correctAnswer = 0;
   switch (operand) {
     case '+':
@@ -67,10 +68,23 @@ const calcGame = () => {
     default:
       break;
   }
-  const question = `Question: ${randomNumber1} ${operand} ${randomNumber2}`;
   return [task, question, String(correctAnswer)];
 };
 
+const gcdGame = () => {
+  const task = 'Find the greatest common divisor of given numbers.';
+  const randomNumber1 = generateRandomNumber();
+  const randomNumber2 = generateRandomNumber();
+  const question = `Question: ${randomNumber1} ${randomNumber2}`;
+  const smallestNumber = randomNumber1 > randomNumber2 ? randomNumber1 : randomNumber2;
+  for (let i = smallestNumber; i > 0; i -= 1) {
+    if ((randomNumber1 % i === 0) && (randomNumber2 % i === 0)) {
+      return [task, question, String(i)];
+    }
+  }
+  return task;
+};
+
 export {
-  greeting, evenGame, calcGame,
+  greeting, evenGame, calcGame, gcdGame,
 };
