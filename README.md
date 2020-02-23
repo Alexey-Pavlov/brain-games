@@ -10,3 +10,5 @@
 <a href="https://asciinema.org/a/vF5NGG2h2D9g6efKA8o5s57Pf" target="_blank"><img src="https://asciinema.org/a/vF5NGG2h2D9g6efKA8o5s57Pf.svg" /></a>
 ## Setup and play "Arithmetic progression" game
 <a href="https://asciinema.org/a/h3J1c48rQ64s6cZF4XiXGC0A2" target="_blank"><img src="https://asciinema.org/a/h3J1c48rQ64s6cZF4XiXGC0A2.svg" /></a>
+## Setup and play "Is the number prime?" game
+<a href="https://asciinema.org/a/FeLwbVinIAqH7uVVcYm1Kdisn" target="_blank"><img src="https://asciinema.org/a/FeLwbVinIAqH7uVVcYm1Kdisn.svg" /></a>
