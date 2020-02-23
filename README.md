@@ -8,3 +8,5 @@
 <a href="https://asciinema.org/a/LgbJbwBxME50UzF6lFrPLQA7c" target="_blank"><img src="https://asciinema.org/a/LgbJbwBxME50UzF6lFrPLQA7c.svg" /></a>
 ## Setup and play "GCD" game
 <a href="https://asciinema.org/a/vF5NGG2h2D9g6efKA8o5s57Pf" target="_blank"><img src="https://asciinema.org/a/vF5NGG2h2D9g6efKA8o5s57Pf.svg" /></a>
+## Setup and play "Arithmetic progression" game
+<a href="https://asciinema.org/a/h3J1c48rQ64s6cZF4XiXGC0A2" target="_blank"><img src="https://asciinema.org/a/h3J1c48rQ64s6cZF4XiXGC0A2.svg" /></a>
