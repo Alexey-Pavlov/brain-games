@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const generateRandomNumber = () => Math.floor(Math.random() * (100 + 1));
+const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const generateRandomMathSign = () => {
   const arrayOfSigns = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * (2 + 1));
@@ -41,7 +41,7 @@ export const gamesEngine = (currentGame) => {
 const evenGame = () => {
   const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const randomNumber = generateRandomNumber();
+  const randomNumber = generateRandomNumber(0, 100);
   const question = `Question: ${randomNumber}`;
   const isEven = (randomNumber % 2 === 0);
   const correctAnswer = isEven ? 'yes' : 'no';
@@ -50,8 +50,8 @@ const evenGame = () => {
 
 const calcGame = () => {
   const task = 'What is the result of the expression?';
-  const randomNumber1 = generateRandomNumber();
-  const randomNumber2 = generateRandomNumber();
+  const randomNumber1 = generateRandomNumber(0, 100);
+  const randomNumber2 = generateRandomNumber(0, 100);
   const operand = generateRandomMathSign();
   const question = `Question: ${randomNumber1} ${operand} ${randomNumber2}`;
   let correctAnswer = 0;
@@ -73,8 +73,8 @@ const calcGame = () => {
 
 const gcdGame = () => {
   const task = 'Find the greatest common divisor of given numbers.';
-  const randomNumber1 = generateRandomNumber();
-  const randomNumber2 = generateRandomNumber();
+  const randomNumber1 = generateRandomNumber(0, 100);
+  const randomNumber2 = generateRandomNumber(0, 100);
   const question = `Question: ${randomNumber1} ${randomNumber2}`;
   const smallestNumber = randomNumber1 > randomNumber2 ? randomNumber1 : randomNumber2;
   for (let i = smallestNumber; i > 0; i -= 1) {
@@ -85,6 +85,24 @@ const gcdGame = () => {
   return task;
 };
 
+const progressionGame = () => {
+  const task = 'What number is missing in the progression?';
+  const beginOfProgression = generateRandomNumber(0, 50);
+  const apDifference = generateRandomNumber(1, 20);
+  const indexOfHiddenElement = generateRandomNumber(1, 10);
+  let correctAnswer = 0;
+  let question = 'Question: ';
+  for (let i = 1; i <= 10; i += 1) {
+    if (i === indexOfHiddenElement) {
+      question += ' ..';
+      correctAnswer = beginOfProgression + apDifference * i;
+    } else {
+      question += ` ${beginOfProgression + apDifference * i}`;
+    }
+  }
+  return [task, question, String(correctAnswer)];
+};
+
 export {
-  greeting, evenGame, calcGame, gcdGame,
+  greeting, evenGame, calcGame, gcdGame, progressionGame,
 };
