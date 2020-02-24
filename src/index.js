@@ -1,11 +1,6 @@
 import readlineSync from 'readline-sync';
 
 const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-const generateRandomMathSign = () => {
-  const arrayOfSigns = ['+', '-', '*'];
-  const randomIndex = Math.floor(Math.random() * (2 + 1));
-  return arrayOfSigns[randomIndex];
-};
 
 const wrongAnswerMessage = (answer, correctAnswer, name) => {
   console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${name}!`);
@@ -38,91 +33,6 @@ export const gamesEngine = (currentGame) => {
   return 0;
 };
 
-const evenGame = () => {
-  const task = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-  const randomNumber = generateRandomNumber(0, 100);
-  const question = `Question: ${randomNumber}`;
-  const isEven = (randomNumber % 2 === 0);
-  const correctAnswer = isEven ? 'yes' : 'no';
-  return [task, question, String(correctAnswer)];
-};
-
-const calcGame = () => {
-  const task = 'What is the result of the expression?';
-  const randomNumber1 = generateRandomNumber(0, 100);
-  const randomNumber2 = generateRandomNumber(0, 100);
-  const operand = generateRandomMathSign();
-  const question = `Question: ${randomNumber1} ${operand} ${randomNumber2}`;
-  let correctAnswer = 0;
-  switch (operand) {
-    case '+':
-      correctAnswer = randomNumber1 + randomNumber2;
-      break;
-    case '-':
-      correctAnswer = randomNumber1 - randomNumber2;
-      break;
-    case '*':
-      correctAnswer = randomNumber1 * randomNumber2;
-      break;
-    default:
-      break;
-  }
-  return [task, question, String(correctAnswer)];
-};
-
-const gcdGame = () => {
-  const task = 'Find the greatest common divisor of given numbers.';
-  const randomNumber1 = generateRandomNumber(0, 100);
-  const randomNumber2 = generateRandomNumber(0, 100);
-  const question = `Question: ${randomNumber1} ${randomNumber2}`;
-  const smallestNumber = randomNumber1 > randomNumber2 ? randomNumber1 : randomNumber2;
-  for (let i = smallestNumber; i > 0; i -= 1) {
-    if ((randomNumber1 % i === 0) && (randomNumber2 % i === 0)) {
-      return [task, question, String(i)];
-    }
-  }
-  return task;
-};
-
-const progressionGame = () => {
-  const task = 'What number is missing in the progression?';
-  const beginOfProgression = generateRandomNumber(0, 50);
-  const apDifference = generateRandomNumber(1, 20);
-  const indexOfHiddenElement = generateRandomNumber(1, 10);
-  let correctAnswer = 0;
-  let question = 'Question: ';
-  for (let i = 1; i <= 10; i += 1) {
-    if (i === indexOfHiddenElement) {
-      question += ' ..';
-      correctAnswer = beginOfProgression + apDifference * i;
-    } else {
-      question += ` ${beginOfProgression + apDifference * i}`;
-    }
-  }
-  return [task, question, String(correctAnswer)];
-};
-
-const primeGame = () => {
-  const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const randomNumber = generateRandomNumber(0, 3500);
-  const question = `Question: ${randomNumber}`;
-  let correctAnswer = '';
-  if (randomNumber < 2) {
-    correctAnswer += 'no';
-  }
-  for (let i = 2; i < randomNumber; i += 1) {
-    if (randomNumber % i === 0) {
-      correctAnswer += 'no';
-      break;
-    }
-  }
-  if (correctAnswer.length === 0) {
-    correctAnswer += 'yes';
-  }
-  return [task, question, String(correctAnswer)];
-};
-
 export {
-  greeting, evenGame, calcGame, gcdGame, progressionGame, primeGame,
+  greeting, generateRandomNumber,
 };

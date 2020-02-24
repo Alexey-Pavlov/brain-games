@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import { gamesEngine, evenGame } from '../src/index.js';
+import evenGame from '../src/games/evenGame.js';
+import { gamesEngine } from '../src/index.js';
 
 gamesEngine(evenGame);
