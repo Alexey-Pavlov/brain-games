@@ -1,8 +1,9 @@
-import { generateRandomNumber } from '../index.js';
+import { generateRandomNumber, gamesEngine } from '../index.js';
 
 const generateRandomMathSign = () => {
   const arrayOfSigns = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * (2 + 1));
+
   return arrayOfSigns[randomIndex];
 };
 
@@ -11,7 +12,7 @@ const calcGame = () => {
   const randomNumber1 = generateRandomNumber(0, 100);
   const randomNumber2 = generateRandomNumber(0, 100);
   const operand = generateRandomMathSign();
-  const question = `Question: ${randomNumber1} ${operand} ${randomNumber2}`;
+  const question = `${randomNumber1} ${operand} ${randomNumber2}`;
   let correctAnswer = 0;
   switch (operand) {
     case '+':
@@ -26,7 +27,10 @@ const calcGame = () => {
     default:
       break;
   }
+
   return [task, question, String(correctAnswer)];
 };
 
-export default calcGame;
+const callEngine = () => gamesEngine(calcGame);
+
+export default callEngine;
