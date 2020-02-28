@@ -1,5 +1,5 @@
 # frontend-project-lvl1 <br>
-[![CI](https://github.com/Alexey-Pavlov/frontend-project-lvl1/workflows/CI/badge.svg)](https://github.com/lexey-Pavlov/frontend-project-lvl1/actions)
+![CI](https://github.com/Alexey-Pavlov/frontend-project-lvl1/workflows/CI/badge.svg)
 <a href="https://codeclimate.com/github/Alexey-Pavlov/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/651e306392bd512ed0ca/maintainability" /></a>
 ## Setup and play "Parity check" game
 <a href="https://asciinema.org/a/PlIhE7weXjLwUGl5RlBZC5lQ5" target="_blank"><img src="https://asciinema.org/a/PlIhE7weXjLwUGl5RlBZC5lQ5.svg" /></a>
