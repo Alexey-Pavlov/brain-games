@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import callEngine from '../src/games/progressionGame.js';
+import callGame from '../src/games/progressionGame.js';
 
-callEngine();
+callGame();

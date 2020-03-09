@@ -6,18 +6,18 @@ const wrongAnswerMessage = (answer, correctAnswer, name) => {
   console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${name}!`);
 };
 
-const greeting = () => {
-  console.log('Welcome to the Brain Games!');
-  const actual = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${actual}!`);
-  return actual;
+const congratulationsMessage = (name) => {
+  console.log(`Congratulations, ${name}!`);
 };
 
-export const gamesEngine = (currentGame) => {
-  const name = greeting();
-  console.log(currentGame()[0]);
+export const gamesEngine = (task, currentGame) => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  console.log(task);
+
   for (let i = 0; i < 3; i += 1) {
-    const [, currentTask, correctAnswer] = currentGame();
+    const [currentTask, correctAnswer] = currentGame();
     const question = `Question: ${currentTask}`;
     console.log(question);
     const answer = readlineSync.question('Your answer: ');
@@ -27,9 +27,9 @@ export const gamesEngine = (currentGame) => {
       return wrongAnswerMessage(answer, correctAnswer, name);
     }
   }
-  return console.log(`Congratulations, ${name}!`);
+  return congratulationsMessage(name);
 };
 
 export {
-  greeting, generateRandomNumber,
+  generateRandomNumber,
 };

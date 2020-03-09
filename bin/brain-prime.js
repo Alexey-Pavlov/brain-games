@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import callEngine from '../src/games/primeGame.js';
+import callGame from '../src/games/primeGame.js';
 
-callEngine();
+callGame();

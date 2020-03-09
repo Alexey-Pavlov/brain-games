@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import callEngine from '../src/games/calcGame.js';
+import callGame from '../src/games/calcGame.js';
 
-callEngine();
+callGame();
