@@ -1,26 +1,26 @@
-import { generateRandomNumber, gamesEngine } from '../index.js';
+import gamesEngine from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const task = 'What number is missing in the progression?';
 
 const generateGameData = () => {
-  const lengthOfProgression = 10;
-  const beginOfProgression = generateRandomNumber(0, 50);
-  const apDifference = generateRandomNumber(1, 20);
-  const indexOfHiddenElement = generateRandomNumber(1, lengthOfProgression);
-  let correctAnswer;
+  const length = 10;
+  const begin = generateRandomNumber(0, 50);
+  const progressionDiff = generateRandomNumber(1, 20);
+  const hiddenElementIndex = generateRandomNumber(1, length - 1);
+  const correctAnswer = begin + progressionDiff * hiddenElementIndex;
   let question = '';
-  for (let i = 1; i <= lengthOfProgression; i += 1) {
-    if (i === indexOfHiddenElement) {
+  for (let i = 0; i <= length - 1; i += 1) {
+    if (i === hiddenElementIndex) {
       question = `${question} ..`;
-      correctAnswer = beginOfProgression + apDifference * i;
     } else {
-      question = `${question} ${beginOfProgression + apDifference * i}`;
+      question = `${question} ${begin + progressionDiff * i}`;
     }
   }
 
-  return [question, String(correctAnswer)];
+  return [question.trimLeft(), String(correctAnswer)];
 };
 
-const callGame = () => gamesEngine(task, generateGameData);
+const startGame = () => gamesEngine(task, generateGameData);
 
-export default callGame;
+export default startGame;

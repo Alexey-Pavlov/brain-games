@@ -1,4 +1,5 @@
-import { generateRandomNumber, gamesEngine } from '../index.js';
+import gamesEngine from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const findGcd = (randomNumber1, randomNumber2) => {
   const smallestNumber = randomNumber1 > randomNumber2 ? randomNumber1 : randomNumber2;
@@ -21,6 +22,6 @@ const generateGameData = () => {
   return [question, String(gcd)];
 };
 
-const callGame = () => gamesEngine(task, generateGameData);
+const startGame = () => gamesEngine(task, generateGameData);
 
-export default callGame;
+export default startGame;
