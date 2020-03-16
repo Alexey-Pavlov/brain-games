@@ -8,6 +8,7 @@ const findGcd = (randomNumber1, randomNumber2) => {
       return i;
     }
   }
+
   return 1;
 };
 

@@ -16,6 +16,7 @@ const generateGameData = () => {
   const sign = generateRandomMathSign();
   const question = `${randomNumber1} ${sign} ${randomNumber2}`;
   let correctAnswer;
+
   switch (sign) {
     case '+':
       correctAnswer = randomNumber1 + randomNumber2;

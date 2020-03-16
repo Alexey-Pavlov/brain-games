@@ -10,6 +10,7 @@ const generateGameData = () => {
   const hiddenElementIndex = generateRandomNumber(1, length - 1);
   const correctAnswer = begin + progressionDiff * hiddenElementIndex;
   let question = '';
+
   for (let i = 0; i <= length - 1; i += 1) {
     if (i === hiddenElementIndex) {
       question = `${question} ..`;
