@@ -1,4 +1,4 @@
-import gamesEngine from '../index.js';
+import gameEngine from '../index.js';
 import generateRandomNumber from '../utils.js';
 
 const generateRandomMathSign = () => {
@@ -34,6 +34,6 @@ const generateGameData = () => {
   return [question, String(correctAnswer)];
 };
 
-const startGame = () => gamesEngine(task, generateGameData);
+const startGame = () => gameEngine(task, generateGameData);
 
 export default startGame;

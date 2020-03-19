@@ -1,4 +1,4 @@
-import gamesEngine from '../index.js';
+import gameEngine from '../index.js';
 import generateRandomNumber from '../utils.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -25,6 +25,6 @@ const generateGameData = () => {
   return [question, correctAnswer];
 };
 
-const startGame = () => gamesEngine(task, generateGameData);
+const startGame = () => gameEngine(task, generateGameData);
 
 export default startGame;
