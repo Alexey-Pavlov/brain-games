@@ -18,9 +18,9 @@ const generateGameData = () => {
   const randomNumber1 = generateRandomNumber(0, 100);
   const randomNumber2 = generateRandomNumber(0, 100);
   const question = `${randomNumber1} ${randomNumber2}`;
-  const gcd = findGcd(randomNumber1, randomNumber2);
+  const correctAnswer = findGcd(randomNumber1, randomNumber2);
 
-  return [question, String(gcd)];
+  return [question, String(correctAnswer)];
 };
 
 const startGame = () => gameEngine(task, generateGameData);
