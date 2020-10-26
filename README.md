@@ -1,9 +1,9 @@
-# frontend-project-lvl1 <br>
+# Mind Games <br>
 ![CI](https://github.com/Alexey-Pavlov/frontend-project-lvl1/workflows/CI/badge.svg)
 <a href="https://codeclimate.com/github/Alexey-Pavlov/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/651e306392bd512ed0ca/maintainability" /></a>
 
-This is educational project from Hexlet, profession Frontend-Javascript. [Read more about Hexlet (in Russian)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=nodejs-package).
-The first project aims to become familiar with the JavaScript ecosystem. This is a set of mini-games launched from the console. They are called **"Mind Games"**.
+This is educational project.
+The project aims to become familiar with the JavaScript ecosystem. This is a set of mini-games launched from the console. They are called **"Mind Games"**.
 
 ## Setup
 
